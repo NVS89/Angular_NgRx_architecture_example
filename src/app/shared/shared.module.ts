@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { ItemListComponent } from './item-list/item-list.component';
 
 import { primeNg } from './import';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
     declarations: [
-        ItemListComponent
+        ItemListComponent,
+        NavigationComponent
     ],
     imports: [
         CommonModule,
         ...primeNg
     ],
     exports: [
-        ItemListComponent
+        ItemListComponent,
+        NavigationComponent
     ]
 })
 export class SharedModule { }
