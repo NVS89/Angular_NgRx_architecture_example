@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { ItemListComponent } from './item-list/item-list.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 import { primeNg } from './import';
-import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
     declarations: [
@@ -12,6 +14,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     ],
     imports: [
         CommonModule,
+        RouterModule,
         ...primeNg
     ],
     exports: [

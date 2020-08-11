@@ -1,0 +1,25 @@
+<div class="ingredient">
+    <form class="ingredient__form" [formGroup]="ingredientForm">
+        <div>
+            <input
+                pInputText
+                type="text"
+                formControlName="name"
+            >
+        </div>
+        <div>
+            <input
+                pInputText
+                type="number"
+                formControlName="quantity"
+            >
+        </div>
+        <button
+            pButton
+            type="button"
+            label="Add"
+            (click)="formSubmit()"
+            [disabled]="ingredientForm.invalid"
+        ></button>
+    </form>
+</div>

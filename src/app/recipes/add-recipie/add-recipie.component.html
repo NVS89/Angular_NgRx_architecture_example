@@ -1,1 +1,35 @@
-<p>add-recipie works!</p>
+<div>
+    <div class="recipe__name">
+        <div class="title">Recipe Name:</div>
+        <div class="recipe__name--input">
+            <input
+                pInputText
+                type="text"
+                [(ngModel)]="recipeName"
+            >
+        </div>
+        <hr />
+    </div>
+    <div>
+        <app-ingredient-selector
+            (addIngredient)="addIngredient($event)"
+        ></app-ingredient-selector>
+        <hr />
+    </div>
+    <div
+        *ngIf="this.ingredients.length !== 0"
+    >
+        <app-recipe-data
+            [ingredientsList]="ingredients"
+        ></app-recipe-data>
+        <hr />
+    </div>
+    <button
+        pButton
+        type="button"
+        label="Click"
+        (click)="SubmitRecipe()"
+        [disabled]="isSubmitDisabled()"
+    >
+    </button>
+</div>

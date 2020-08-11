@@ -7,16 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-    @Input() set itemList(value: { label: string, path: string }) {
-        this._itemList = value;
+    @Input() set linkList(value: { label: string, path: string }) {
+        this._linkList = value;
     }
 
-    get itemList(): { label: string, path: string } {
-        return this._itemList;
+    get linkList(): { label: string, path: string } {
+        return this._linkList;
     }
-    _itemList: {
+    _linkList: {
         label: string,
-        path: string 
+        path: string
     };
 
     constructor() { }

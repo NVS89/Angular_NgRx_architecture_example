@@ -1,0 +1,10 @@
+.recipe__name {
+    display: flex;
+    margin: 15px;
+    .title {
+        line-height: 45px;
+    }
+    &--input {
+        margin: 5px;
+    }
+}

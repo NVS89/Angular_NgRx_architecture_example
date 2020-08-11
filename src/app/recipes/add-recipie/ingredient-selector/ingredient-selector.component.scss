@@ -1,0 +1,9 @@
+.ingredient {
+    margin: 15px;
+    &__form {
+        display: flex;
+    }
+    div {
+        margin: 0 5px;
+    }
+}

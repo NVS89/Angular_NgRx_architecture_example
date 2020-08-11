@@ -1,5 +1,5 @@
 <div class="navigation">
-    <div *ngFor="let item of itemList">
-        <span>item.label</span>
+    <div class="nav-item" *ngFor="let item of linkList">
+        <a class="link" [routerLink]="[item.path]">{{item.label}}</a>
     </div>
 </div>
