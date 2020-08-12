@@ -1,6 +1,14 @@
 <div class="ingredient-list">
-    <div *ngFor="let ingredient of ingredientsList">
-        <div class="ingredient-list__name">{{ingredient.name}}</div>
-        <div class="ingredient-list__quantity">{{ingredient.quantity}}</div>
+    <div class="ingredient-list__record" *ngFor="let ingredient of ingredientsList; let i = index">
+        <div class="ingredient-info ingredient-list__name">{{ingredient.name}}</div>
+        <div class="ingredient-info ingredient-list__quantity">{{ingredient.quantity}}</div>
+        <div class="ingredient-info ">
+            <button
+                pButton
+                type="button"
+                icon="pi pi-times"
+                (click)="deleteIngredientHandler(ingredient, i)"
+            ></button>
+        </div>
     </div>
 </div>

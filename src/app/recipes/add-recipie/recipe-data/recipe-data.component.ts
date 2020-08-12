@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Ingredient } from '../../../models/ingredient.model';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Ingredient } from './../../../models/ingredient.model';
 
 @Component({
     selector: 'app-recipe-data',
@@ -8,10 +7,10 @@ import { Ingredient } from '../../../models/ingredient.model';
     styleUrls: ['./recipe-data.component.scss']
 })
 export class RecipeDataComponent implements OnInit {
+    @Output() deleteIngredient: EventEmitter<{ ingredient: Ingredient, index: number }> = new EventEmitter();
 
     @Input()
     set ingredientsList(value: Array<Ingredient>) {
-        debugger
         this._ingredientsList = [...value];
     }
 
@@ -19,11 +18,19 @@ export class RecipeDataComponent implements OnInit {
         return this._ingredientsList;
     }
 
+
     _ingredientsList: Array<Ingredient>;
 
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    deleteIngredientHandler(ingredient, index){
+        this.deleteIngredient.emit({
+            ingredient,
+            index
+        });
     }
 
 }

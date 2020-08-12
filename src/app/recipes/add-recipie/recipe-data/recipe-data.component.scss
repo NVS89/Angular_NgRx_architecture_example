@@ -1,0 +1,11 @@
+.ingredient {
+    &-list {
+        &__record {
+            display: flex;
+        }
+    }
+    &-info {
+        margin: 0 15px;
+        line-height: 35px;
+    }
+}

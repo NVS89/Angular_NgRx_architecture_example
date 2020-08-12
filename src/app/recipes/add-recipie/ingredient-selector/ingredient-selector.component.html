@@ -5,6 +5,7 @@
                 pInputText
                 type="text"
                 formControlName="name"
+                placeholder="Name"
             >
         </div>
         <div>
@@ -12,13 +13,14 @@
                 pInputText
                 type="number"
                 formControlName="quantity"
+                placeholder="quantity"
             >
         </div>
         <button
             pButton
             type="button"
             label="Add"
-            (click)="formSubmit()"
+            (click)="formSubmitHandler()"
             [disabled]="ingredientForm.invalid"
         ></button>
     </form>

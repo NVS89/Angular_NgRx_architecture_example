@@ -17,16 +17,23 @@ export class AddRecipieComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    addIngredient(event: Ingredient){
+    addIngredientHandler(event: Ingredient){
         this.ingredients.push(event);
     }
 
-    SubmitRecipe(){
+    deleteIngredientHandler({ingredient, index}){
+        const ingredientsCopy = [...this.ingredients];
+        this.ingredients = [...ingredientsCopy.slice(0, index), ...ingredientsCopy.slice(index + 1)];
+    }
+
+    submitRecipeHandler(){
         console.log('===================================================');
         console.log(this.ingredients);
         console.log(this.recipeName);
         console.log('===================================================');
     }
+
+
     isSubmitDisabled(){
         return !this.recipeName || this.ingredients.length === 0;
     }

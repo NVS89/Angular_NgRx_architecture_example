@@ -1,10 +1,14 @@
-.recipe__name {
-    display: flex;
-    margin: 15px;
-    .title {
-        line-height: 45px;
+.recipe {
+    &__name {
+        display: flex;
+        .title {
+            line-height: 45px;
+        }
+        &--input {
+            margin: 5px;
+        }
     }
-    &--input {
-        margin: 5px;
+    section {
+        margin: 15px;
     }
 }

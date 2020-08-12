@@ -1,35 +1,37 @@
-<div>
-    <div class="recipe__name">
-        <div class="title">Recipe Name:</div>
+<div class="recipe">
+    <section class="recipe__name">
         <div class="recipe__name--input">
             <input
                 pInputText
                 type="text"
+                placeholder="Recipe Name"
                 [(ngModel)]="recipeName"
             >
         </div>
-        <hr />
-    </div>
-    <div>
+    </section>
+    <section>
         <app-ingredient-selector
-            (addIngredient)="addIngredient($event)"
+            (addIngredient)="addIngredientHandler($event)"
         ></app-ingredient-selector>
         <hr />
-    </div>
-    <div
+    </section>
+    <section
         *ngIf="this.ingredients.length !== 0"
     >
         <app-recipe-data
             [ingredientsList]="ingredients"
+            (deleteIngredient)="deleteIngredientHandler($event)"
         ></app-recipe-data>
         <hr />
-    </div>
-    <button
-        pButton
-        type="button"
-        label="Click"
-        (click)="SubmitRecipe()"
-        [disabled]="isSubmitDisabled()"
-    >
-    </button>
+    </section>
+    <section>
+        <button
+            pButton
+            type="button"
+            label="Click"
+            (click)="submitRecipeHandler()"
+            [disabled]="isSubmitDisabled()"
+        >
+        </button>
+    </section>
 </div>
