@@ -11,7 +11,6 @@ export class RecipeDataComponent implements OnInit {
 
     @Input()
     set ingredientsList(value: Array<Ingredient>) {
-        debugger
         this._ingredientsList = [...value];
     }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IAppState } from './../../models/app-state.interfase';
 import { Ingredient } from './../../models/ingredient.model';
@@ -17,6 +18,7 @@ export class AddRecipieComponent implements OnInit {
     ingredients: Array<Ingredient> = [];
 
     constructor(
+        private router: Router,
         private store: Store<IAppState>
     ) { }
 
@@ -44,6 +46,7 @@ export class AddRecipieComponent implements OnInit {
         this.store.dispatch(
             new RecipeActions.AddRecipeRequest(recipe)
         );
+        this.router.navigate(['/']);
     }
 
 

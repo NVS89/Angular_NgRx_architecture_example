@@ -3,5 +3,5 @@ import { ButtonModule } from 'primeng/button';
 
 export const primeNg = [
     InputTextModule,
-    ButtonModule
+    ButtonModule,
 ];

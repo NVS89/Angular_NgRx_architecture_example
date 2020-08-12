@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+import { IRecipe } from './../../models/recipe.interfase';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-item-list',
@@ -24,12 +26,25 @@ export class ItemListComponent implements OnInit {
         return this._cols;
     }
 
+    @Input() menu: Array<MenuItem>;
+
+    @Output() selectedRecordChange: EventEmitter<IRecipe> = new EventEmitter<IRecipe>();
+
+    get selectedRecord(): IRecipe{
+        return this._selectedRecord;
+    }
+
+    set selectedRecord(value: IRecipe){
+        this._selectedRecord = value;
+        this.selectedRecordChange.emit(value);
+    }
+
+    _selectedRecord: IRecipe;
     _cols: string[] = [];
     _itemList: any[] = [];
 
     constructor() { }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
 }

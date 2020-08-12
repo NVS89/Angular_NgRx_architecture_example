@@ -1,5 +1,11 @@
 <div>
-    <p-table [columns]="columns" [value]="itemList" dataKey="id">
+    <p-table
+        [columns]="columns"
+        [value]="itemList"
+        dataKey="id"
+        [contextMenu]="cm"
+        [(contextMenuSelection)]="selectedRecord"
+    >
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th style="width: 3em"></th>
@@ -9,7 +15,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
-            <tr>
+            <tr [pContextMenuRow]="rowData">
                 <td>
                     <a href="#" [pRowToggler]="rowData">
                         <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
@@ -47,4 +53,5 @@
             </tr>
         </ng-template>
     </p-table>
+    <p-contextMenu #cm [model]="menu"></p-contextMenu>
 </div>

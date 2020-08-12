@@ -10,7 +10,6 @@ import { RecipeActions } from '../actions';
 @Injectable()
 export class RecipeEffects {
     constructor(
-        private store: Store<IAppState>,
         private actions$: Actions
     ) { }
 

@@ -4,6 +4,8 @@
         <app-item-list
             [itemList]="recipes"
             [columns]="columns"
+            [menu]="menu"
+            (selectedRecordChange)="selectedRecordChange($event)"
         ></app-item-list>
     </div>
 </div>
