@@ -11,6 +11,7 @@ export class RecipeDataComponent implements OnInit {
 
     @Input()
     set ingredientsList(value: Array<Ingredient>) {
+        debugger
         this._ingredientsList = [...value];
     }
 
@@ -26,11 +27,8 @@ export class RecipeDataComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    deleteIngredientHandler(ingredient, index){
-        this.deleteIngredient.emit({
-            ingredient,
-            index
-        });
+    deleteIngredientHandler(ingredient){
+        this.deleteIngredient.emit(ingredient.id);
     }
 
 }

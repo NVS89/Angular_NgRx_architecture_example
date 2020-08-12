@@ -16,7 +16,7 @@
         <hr />
     </section>
     <section
-        *ngIf="this.ingredients.length !== 0"
+        *ngIf="this.ingredients.length !== 0; else noIngredients"
     >
         <app-recipe-data
             [ingredientsList]="ingredients"
@@ -24,11 +24,16 @@
         ></app-recipe-data>
         <hr />
     </section>
+    <ng-template #noIngredients>
+        <section>
+            Please add Ingredients before submit
+        </section>
+    </ng-template>
     <section>
         <button
             pButton
             type="button"
-            label="Click"
+            label="Submit"
             (click)="submitRecipeHandler()"
             [disabled]="isSubmitDisabled()"
         >

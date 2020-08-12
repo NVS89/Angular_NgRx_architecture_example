@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
-import { Ingredient } from './../../app/models/ingredient.model';
+import { IRecipe } from './../../models/recipe.interfase';
+
 
 export const ADD_RECIPE_REQUEST = '[Recipe] add recipe request';
 export const ADD_RECIPE_SUCCESS = '[Recipe] add recipe success';
@@ -11,12 +12,12 @@ export const DELETE_RECIPE_FAIL = '[Recipe] delete recipe fail';
 
 export class AddRecipeRequest implements Action {
     readonly type = ADD_RECIPE_REQUEST;
-    constructor( public payload: { name: string, ingredients: Array<Ingredient> }) { }
+    constructor( public payload: IRecipe) { }
 }
 
 export class AddRecipeSuccess implements Action {
     readonly type = ADD_RECIPE_SUCCESS;
-    constructor( public payload: { name: string, ingredients: Array<Ingredient> }) { }
+    constructor( public payload: IRecipe) { }
 }
 
 export class AddRecipeFail implements Action {
@@ -26,12 +27,12 @@ export class AddRecipeFail implements Action {
 
 export class DeleteRecipeRequest implements Action {
     readonly type = DELETE_RECIPE_REQUEST;
-    constructor( public payload: { name: string, ingredients: Array<Ingredient> }) { }
+    constructor( public payload: IRecipe) { }
 }
 
 export class DeleteRecipeSuccess implements Action {
     readonly type = DELETE_RECIPE_SUCCESS;
-    constructor( public payload: { name: string, ingredients: Array<Ingredient> }) { }
+    constructor( public payload: IRecipe) { }
 }
 
 export class DeleteRecipeFail implements Action {
@@ -40,8 +41,8 @@ export class DeleteRecipeFail implements Action {
 }
 
 export type Actions = AddRecipeRequest
- | AddRecipeSuccess
- | AddRecipeFail
- | DeleteRecipeRequest
- | DeleteRecipeSuccess
- | DeleteRecipeFail;
+    | AddRecipeSuccess
+    | AddRecipeFail
+    | DeleteRecipeRequest
+    | DeleteRecipeSuccess
+    | DeleteRecipeFail;

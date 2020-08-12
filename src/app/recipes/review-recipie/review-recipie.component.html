@@ -1,4 +1,9 @@
-<div>
+<div class="recipes-review">
     <div>Recipes List</div>
-    <app-item-list></app-item-list>
+    <div class="recipes-table">
+        <app-item-list
+            [itemList]="recipes"
+            [columns]="columns"
+        ></app-item-list>
+    </div>
 </div>

@@ -1,23 +1,48 @@
 <div>
-    <p-table [columns]="columns" [value]="itemList">
+    <p-table [columns]="columns" [value]="itemList" dataKey="id">
         <ng-template pTemplate="header" let-columns>
             <tr>
+                <th style="width: 3em"></th>
                 <th *ngFor="let col of columns">
                     {{ col.header }}
                 </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
             <tr>
+                <td>
+                    <a href="#" [pRowToggler]="rowData">
+                        <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                    </a>
+                </td>
                 <td *ngFor="let col of columns">
                     {{ rowData[col.field] }}
                 </td>
             </tr>
         </ng-template>
-        <ng-template pTemplate="emptymessage" let-columns>
+        <ng-template pTemplate="emptymessage"  let-columns>
             <tr>
-                <td [attr.colspan]="columns.length">
+                <td [attr.colspan]="columns.length+1">
+
                     No records found
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+            <tr>
+                <td [attr.colspan]="columns.length + 1">
+                    <div *ngFor="let ingredient of rowData.ingredients" class="p-grid -fluid" style="font-size:16px;padding:20px">
+                        <div class="p-col-12 p-md-9">
+                            <div class="p-grid">
+                                <div class="p-col-3">
+                                    <b>Name:</b> {{ingredient.name}}
+                                </div>
+                                <div class="p-col-3">
+                                    <b>Quantity:</b> {{ingredient.quantity}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </ng-template>

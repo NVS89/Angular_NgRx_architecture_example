@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient, } from './../../models/ingredient.model';
+import { Store } from '@ngrx/store';
+import { IAppState } from './../../models/app-state.interfase';
+import { Ingredient } from './../../models/ingredient.model';
+import { IRecipe } from './../../models/recipe.interfase';
+import { RecipeActions } from '../../state/actions';
 
 @Component({
     selector: 'app-add-recipie',
@@ -12,25 +16,34 @@ export class AddRecipieComponent implements OnInit {
 
     ingredients: Array<Ingredient> = [];
 
-    constructor() { }
+    constructor(
+        private store: Store<IAppState>
+    ) { }
 
     ngOnInit(): void {
     }
 
     addIngredientHandler(event: Ingredient){
-        this.ingredients.push(event);
+        const ingredient = {
+            ...event,
+            id: Date.now()
+        };
+        this.ingredients = [...this.ingredients, ingredient];
     }
 
-    deleteIngredientHandler({ingredient, index}){
-        const ingredientsCopy = [...this.ingredients];
-        this.ingredients = [...ingredientsCopy.slice(0, index), ...ingredientsCopy.slice(index + 1)];
+    deleteIngredientHandler(ingredientId){
+        this.ingredients = this.ingredients.filter((i) => i.id !== ingredientId);
     }
 
     submitRecipeHandler(){
-        console.log('===================================================');
-        console.log(this.ingredients);
-        console.log(this.recipeName);
-        console.log('===================================================');
+        const recipe: IRecipe = {
+            name: this.recipeName,
+            ingredients: this.ingredients,
+            id: Date.now()
+        };
+        this.store.dispatch(
+            new RecipeActions.AddRecipeRequest(recipe)
+        );
     }
 
 

@@ -1,5 +1,5 @@
 <div class="ingredient-list">
-    <div class="ingredient-list__record" *ngFor="let ingredient of ingredientsList; let i = index">
+    <div class="ingredient-list__record" *ngFor="let ingredient of ingredientsList">
         <div class="ingredient-info ingredient-list__name">{{ingredient.name}}</div>
         <div class="ingredient-info ingredient-list__quantity">{{ingredient.quantity}}</div>
         <div class="ingredient-info ">
@@ -7,7 +7,7 @@
                 pButton
                 type="button"
                 icon="pi pi-times"
-                (click)="deleteIngredientHandler(ingredient, i)"
+                (click)="deleteIngredientHandler(ingredient)"
             ></button>
         </div>
     </div>
