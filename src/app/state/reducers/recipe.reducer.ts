@@ -1,3 +1,4 @@
+import { DELETE_RECIPE_SUCCESS } from './../actions/recipe.actions';
 import { IRecipe, IRecipes } from './../../models';
 import { RecipeActions } from '../actions';
 
@@ -16,8 +17,16 @@ export function recipeReducer(state = initialState, action: RecipeActions.Action
                     action.payload
                 ]
             };
-        case RecipeActions.ADD_RECIPE_SUCCESS:
-
+        case RecipeActions.DELETE_RECIPE_SUCCESS:
+            const recipesCopy = [...state.recipes];
+            const deletedRecipe = action.payload;
+            const updatedList = recipesCopy.filter((r) => r.id !== deletedRecipe.id);
+            return {
+                ...state,
+                recipes: [
+                    ...updatedList
+                ]
+            };
         case RecipeActions.ADD_RECIPE_FAIL:
         case RecipeActions.DELETE_RECIPE_FAIL:
             return state;
