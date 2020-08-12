@@ -5,6 +5,7 @@ import { IAppState } from './../../models/app-state.interfase';
 import { IRecipe } from './../../models/recipe.interfase';
 import { Subscription } from 'rxjs';
 import { RecipeActions } from 'src/app/state/actions';
+import { filter } from 'rxjs/operators';
 
 @Component({
     selector: 'app-review-recipie',
@@ -41,6 +42,7 @@ export class ReviewRecipieComponent implements OnInit {
 
         this.recipeSub = this.store.select('recipes').subscribe(
             ({ recipes }) => {
+                debugger
                 this.recipes = [...recipes];
             }
         );

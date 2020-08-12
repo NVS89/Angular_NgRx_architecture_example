@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IngredientSelectorComponent } from './ingredient-selector.component';
+import { IngredientSelectorComponent } from '../recipes/add-recipie/ingredient-selector/ingredient-selector.component';
 
 describe('IngredientSelectorComponent', () => {
   let component: IngredientSelectorComponent;

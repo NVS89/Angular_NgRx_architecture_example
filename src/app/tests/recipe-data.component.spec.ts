@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReviewRecipieComponent } from './review-recipie.component';
+import { RecipeDataComponent } from '../recipes/add-recipie/recipe-data/recipe-data.component';
 
-describe('ReviewRecipieComponent', () => {
-  let component: ReviewRecipieComponent;
-  let fixture: ComponentFixture<ReviewRecipieComponent>;
+describe('RecipeDataComponent', () => {
+  let component: RecipeDataComponent;
+  let fixture: ComponentFixture<RecipeDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReviewRecipieComponent ]
+      declarations: [ RecipeDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReviewRecipieComponent);
+    fixture = TestBed.createComponent(RecipeDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
