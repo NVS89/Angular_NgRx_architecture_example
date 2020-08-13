@@ -42,7 +42,6 @@ export class ReviewRecipieComponent implements OnInit {
 
         this.recipeSub = this.store.select('recipes').subscribe(
             ({ recipes }) => {
-                debugger
                 this.recipes = [...recipes];
             }
         );
