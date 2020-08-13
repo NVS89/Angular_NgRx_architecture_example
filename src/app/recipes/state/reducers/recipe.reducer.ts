@@ -1,5 +1,4 @@
-import { DELETE_RECIPE_SUCCESS } from './../actions/recipe.actions';
-import { IRecipe, IRecipes } from './../../models';
+import { IRecipes } from './../../../models';
 import { RecipeActions } from '../actions';
 
 

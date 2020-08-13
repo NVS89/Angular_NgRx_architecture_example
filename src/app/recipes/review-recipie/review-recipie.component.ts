@@ -4,8 +4,7 @@ import { MenuItem } from 'primeng/api';
 import { IAppState } from './../../models/app-state.interfase';
 import { IRecipe } from './../../models/recipe.interfase';
 import { Subscription } from 'rxjs';
-import { RecipeActions } from 'src/app/state/actions';
-import { filter } from 'rxjs/operators';
+import { RecipeActions } from '../state/actions';
 
 @Component({
     selector: 'app-review-recipie',

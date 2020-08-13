@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IRecipe } from './../../models/recipe.interfase';
+import { IRecipe } from './../../../models/recipe.interfase';
 
 
 export const ADD_RECIPE_REQUEST = '[Recipe] add recipe request';

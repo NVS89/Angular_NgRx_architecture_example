@@ -11,8 +11,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // state
-import { rootReducer } from './../state/reducers/index';
-import { RecipeEffects } from './../state/effects/recipe.effects';
+// import { rootReducer } from './../state/reducers/index';
+// import { RecipeEffects } from './../state/effects/recipe.effects';
 
 let dev = [
     StoreDevtoolsModule.instrument({
@@ -29,10 +29,8 @@ if (environment.production) {
     imports: [
         CommonModule,
         BrowserModule,
-        StoreModule.forRoot(rootReducer),
-        EffectsModule.forRoot([
-            RecipeEffects
-        ]),
+        StoreModule.forRoot([]),
+        EffectsModule.forRoot(),
         ...dev
     ],
     exports: [

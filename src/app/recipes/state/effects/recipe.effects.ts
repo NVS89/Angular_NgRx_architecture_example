@@ -1,10 +1,9 @@
 
 import { Injectable } from '@angular/core';
 import { switchMap, catchError } from 'rxjs/operators';
-import { Action, Store } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
-import { IAppState } from './../../models/app-state.interfase';
 import { RecipeActions } from '../actions';
 
 @Injectable()
@@ -40,5 +39,4 @@ export class RecipeEffects {
             return of(new RecipeActions.DeleteRecipeFail());
         })
     );
-
 }

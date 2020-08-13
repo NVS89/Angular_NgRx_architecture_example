@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { IAppState } from './../../models/app-state.interfase';
 import { Ingredient } from './../../models/ingredient.model';
 import { IRecipe } from './../../models/recipe.interfase';
-import { RecipeActions } from '../../state/actions';
+import { RecipeActions } from '../state/actions';
 
 @Component({
     selector: 'app-add-recipie',

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { SharedModule } from './../shared/shared.module';
@@ -10,8 +13,11 @@ import { ReviewRecipieComponent } from './review-recipie/review-recipie.componen
 import { IngredientSelectorComponent } from './add-recipie/ingredient-selector/ingredient-selector.component';
 import { RecipeDataComponent } from './add-recipie/recipe-data/recipe-data.component';
 
+import { RecipeFeatureReducer } from './state/reducers';
+import { RecipeEffects } from './state/effects';
+
+
 import { primeNg } from './import';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -27,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         ReactiveFormsModule,
         FormsModule,
         SharedModule,
+        StoreModule.forFeature('recipeModule', RecipeFeatureReducer),
+        EffectsModule.forFeature([RecipeEffects]),
         ...primeNg
     ]
 })
