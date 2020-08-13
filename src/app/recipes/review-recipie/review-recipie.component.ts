@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MenuItem } from 'primeng/api';
-import { IAppState } from './../../models/app-state.interfase';
-import { IRecipe } from './../../models/recipe.interfase';
+import { IRecipeState, IRecipe } from '@recipes/models';
 import { Subscription } from 'rxjs';
 import { RecipeActions } from '../state/actions';
 
@@ -20,7 +19,7 @@ export class ReviewRecipieComponent implements OnInit {
     selectedRecord: IRecipe;
 
     constructor(
-        private store: Store<IAppState>
+        private store: Store<IRecipeState>
     ) { }
 
     ngOnInit(): void {

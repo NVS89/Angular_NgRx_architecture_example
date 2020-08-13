@@ -1,5 +1,5 @@
 import { MenuItem } from 'primeng/api';
-import { IRecipe } from './../../models/recipe.interfase';
+import { IRecipe } from '@recipes/models';
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({

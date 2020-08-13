@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { IAppState } from './../../models/app-state.interfase';
-import { Ingredient } from './../../models/ingredient.model';
-import { IRecipe } from './../../models/recipe.interfase';
+import { IRecipeState, Ingredient, IRecipe } from '@recipes/models';
 import { RecipeActions } from '../state/actions';
 
 @Component({
@@ -19,7 +17,7 @@ export class AddRecipieComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private store: Store<IAppState>
+        private store: Store<IRecipeState>
     ) { }
 
     ngOnInit(): void {

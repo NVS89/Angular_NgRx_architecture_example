@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Ingredient } from './../../../models/ingredient.model';
+import { Ingredient } from '@recipes/models';
 
 @Component({
     selector: 'app-recipe-data',

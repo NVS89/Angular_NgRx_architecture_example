@@ -1,9 +1,9 @@
-import { IAppState } from './app-state.interfase';
+import { IRecipeState } from './recipe-state.interfase';
 import { Ingredient } from './ingredient.model';
 import { IRecipe, IRecipes } from './recipe.interfase';
 
 export {
-    IAppState,
+    IRecipeState,
     Ingredient,
     IRecipe,
     IRecipes,

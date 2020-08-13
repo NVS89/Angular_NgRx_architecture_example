@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Ingredient } from './../../../models/ingredient.model';
+import { Ingredient } from '@recipes/models';
 
 @Component({
     selector: 'app-ingredient-selector',

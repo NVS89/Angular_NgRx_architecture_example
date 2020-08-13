@@ -1,9 +1,9 @@
 import { ActionReducerMap, createSelector, createFeatureSelector } from '@ngrx/store';
-import { IAppState, IRecipes } from './../../../models';
+import { IRecipeState, IRecipes } from '@recipes/models';
 import * as RecipeReducer from './recipe.reducer';
 
 
-export const RecipeFeatureReducer: ActionReducerMap<IAppState> = {
+export const RecipeFeatureReducer: ActionReducerMap<IRecipeState> = {
     recipes: RecipeReducer.recipeReducer
 };
 

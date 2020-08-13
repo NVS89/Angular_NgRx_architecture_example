@@ -1,5 +1,5 @@
 import { IRecipes } from './recipe.interfase';
 
-export interface IAppState {
+export interface IRecipeState {
     recipes: IRecipes;
 }

@@ -1,4 +1,4 @@
-import { IRecipes } from './../../../models';
+import { IRecipes } from '@recipes/models';
 import { RecipeActions } from '../actions';
 
 
