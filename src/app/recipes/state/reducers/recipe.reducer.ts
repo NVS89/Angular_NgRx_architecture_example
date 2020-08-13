@@ -3,7 +3,7 @@ import { RecipeActions } from '../actions';
 
 
 export const initialState: IRecipes = {
-    recipes: []
+    recipesList: []
 };
 
 export function recipeReducer(state = initialState, action: RecipeActions.Actions) {
@@ -11,18 +11,18 @@ export function recipeReducer(state = initialState, action: RecipeActions.Action
         case RecipeActions.ADD_RECIPE_SUCCESS:
             return {
                 ...state,
-                recipes: [
-                    ...state.recipes,
+                recipesList: [
+                    ...state.recipesList,
                     action.payload
                 ]
             };
         case RecipeActions.DELETE_RECIPE_SUCCESS:
-            const recipesCopy = [...state.recipes];
+            const recipesCopy = [...state.recipesList];
             const deletedRecipe = action.payload;
             const updatedList = recipesCopy.filter((r) => r.id !== deletedRecipe.id);
             return {
                 ...state,
-                recipes: [
+                recipesList: [
                     ...updatedList
                 ]
             };
@@ -34,3 +34,5 @@ export function recipeReducer(state = initialState, action: RecipeActions.Action
 
     }
 }
+
+export const getRecipes = (state: IRecipes) => state.recipesList;

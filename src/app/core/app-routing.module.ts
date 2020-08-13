@@ -1,5 +1,3 @@
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./recipes/recipes.module').then(m => m.RecipesModule)
+        loadChildren: () => import('../recipes/recipes.module').then(m => m.RecipesModule)
     }
 ];
 

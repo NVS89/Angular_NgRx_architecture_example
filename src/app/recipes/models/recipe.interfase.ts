@@ -6,5 +6,5 @@ export interface IRecipe {
     id?: number;
 }
 export interface IRecipes {
-    recipes: Array<IRecipe>;
+    recipesList: Array<IRecipe>;
 }

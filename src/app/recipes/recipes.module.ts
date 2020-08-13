@@ -35,7 +35,7 @@ import { primeNg } from './import';
         SharedModule,
         StoreModule.forFeature('recipeModule', RecipeFeatureReducer),
         EffectsModule.forFeature([RecipeEffects]),
-        ...primeNg
+        ...primeNg,
     ]
 })
 export class RecipesModule { }

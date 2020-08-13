@@ -1,6 +1,5 @@
 import { MenuItem } from 'primeng/api';
-import { IRecipe } from '@recipes/models';
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-item-list',
@@ -28,18 +27,18 @@ export class ItemListComponent implements OnInit {
 
     @Input() menu: Array<MenuItem>;
 
-    @Output() selectedRecordChange: EventEmitter<IRecipe> = new EventEmitter<IRecipe>();
+    @Output() selectedRecordChange: EventEmitter<any> = new EventEmitter<any>();
 
-    get selectedRecord(): IRecipe{
+    get selectedRecord(): any{
         return this._selectedRecord;
     }
 
-    set selectedRecord(value: IRecipe){
+    set selectedRecord(value: any){
         this._selectedRecord = value;
         this.selectedRecordChange.emit(value);
     }
 
-    _selectedRecord: IRecipe;
+    _selectedRecord: any;
     _cols: string[] = [];
     _itemList: any[] = [];
 

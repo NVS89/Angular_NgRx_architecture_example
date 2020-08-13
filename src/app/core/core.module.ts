@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,8 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // state
-// import { rootReducer } from './../state/reducers/index';
-// import { RecipeEffects } from './../state/effects/recipe.effects';
+import { routerReducer } from '@ngrx/router-store';
 
 let dev = [
     StoreDevtoolsModule.instrument({
@@ -29,12 +29,16 @@ if (environment.production) {
     imports: [
         CommonModule,
         BrowserModule,
-        StoreModule.forRoot([]),
+        AppRoutingModule,
+        StoreModule.forRoot({
+            router: routerReducer,
+        }),
         EffectsModule.forRoot(),
         ...dev
     ],
     exports: [
         BrowserModule,
+        AppRoutingModule
     ]
 })
 export class CoreModule { }

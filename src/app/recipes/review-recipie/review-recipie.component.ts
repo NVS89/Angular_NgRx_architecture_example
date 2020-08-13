@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { MenuItem } from 'primeng/api';
 import { IRecipeState, IRecipe } from '@recipes/models';
 import { Subscription } from 'rxjs';
+import { getRecipesSelector } from './../state/reducers';
 import { RecipeActions } from '../state/actions';
 
 @Component({
@@ -38,14 +39,16 @@ export class ReviewRecipieComponent implements OnInit {
             { label: 'Delete', icon: 'pi pi-times', command: (event) => this.deleteRecipe(this.selectedRecord) }
         ];
 
-        this.recipeSub = this.store.select('recipes').subscribe(
-            ({ recipes }) => {
+        this.recipeSub = this.store.pipe(
+            select(getRecipesSelector)
+        ).subscribe(
+            (recipes) => {
                 this.recipes = [...recipes];
             }
         );
     }
 
-    selectedRecordChange(event){
+    selectedRecordChange(event) {
         this.selectedRecord = event;
     }
 

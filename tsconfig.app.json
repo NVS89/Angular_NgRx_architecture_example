@@ -5,6 +5,8 @@
     "types": [],
     "paths": {
         "@app/*": ["src/app/*"],
+        "@corem/*": ["src/app/core/*"],
+        "@shared/*": ["src/app/shared/*"],
         "@recipes/*":["src/app/recipes/*"],
         "@environments/*":["src/environments/*"]
       }
